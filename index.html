@@ -10,3 +10,25 @@
     <button></button>
 </div>
 <link href="index.css" rel="stylesheet" />
+
+<script>
+var turnoActual = "X";
+
+function cambiarTurno( turno ) {
+    if (turno === "X") {
+        return "O";
+    }
+
+    if (turno === "O") {
+        return "X";
+    }
+}
+
+Array.from(document.querySelectorAll("button"))
+    .forEach((boton) => {
+        boton.addEventListener("click", () => {
+            boton.textContent = turnoActual;
+            turnoActual = cambiarTurno(turnoActual);
+        });
+    });
+</script>
