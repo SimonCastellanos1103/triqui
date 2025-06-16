@@ -29,6 +29,7 @@ Array.from(document.querySelectorAll("button"))
         boton.addEventListener("click", () => {
             boton.textContent = turnoActual;
             turnoActual = cambiarTurno(turnoActual);
+            boton.disabled = true;
         });
     });
 </script>
