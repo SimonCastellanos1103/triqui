@@ -13,6 +13,17 @@
 
 <script>
 var turnoActual = "X";
+var elementos = Array.from(document.querySelectorAll("button"))
+var tres_en_linea = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+];
 
 function cambiarTurno( turno ) {
     if (turno === "X") {
@@ -24,12 +35,35 @@ function cambiarTurno( turno ) {
     }
 }
 
-Array.from(document.querySelectorAll("button"))
-    .forEach((boton) => {
-        boton.addEventListener("click", () => {
-            boton.textContent = turnoActual;
-            turnoActual = cambiarTurno(turnoActual);
-            boton.disabled = true;
-        });
+elementos.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+        boton.disabled = true;
+        boton.textContent = turnoActual;
+        
+        if (revisar_triqui()) {
+            alert("Ganó " + turnoActual);
+        }
+        
+        turnoActual = cambiarTurno(turnoActual);
     });
+});
+
+function revisar_condicion_ganadora(boton_1, boton_2, boton_3) {
+    if (boton_1.textContent === turnoActual && boton_2.textContent === turnoActual && boton_3.textContent === turnoActual && boton_1.disabled && boton_2.disabled && boton_3.disabled) {
+        return true;
+    }
+
+    return false;
+}
+
+function revisar_triqui() {
+    return tres_en_linea.some(function (posicion) {
+        return revisar_condicion_ganadora(
+            elementos[posicion[0]],
+            elementos[posicion[1]],
+            elementos[posicion[2]]
+        );
+    });
+}
+
 </script>
