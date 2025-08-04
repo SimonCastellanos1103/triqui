@@ -1,4 +1,4 @@
-<div>
+<div class="grupodebotones">
     <button></button>
     <button></button>
     <button></button>
@@ -9,11 +9,13 @@
     <button></button> 
     <button></button>
 </div>
+
+<button class="volveraempezar" onclick="location.reload()">volver a empezar</button>
 <link href="index.css" rel="stylesheet" />
 
 <script>
 var turnoActual = "X";
-var elementos = Array.from(document.querySelectorAll("button"))
+var elementos = Array.from(document.querySelectorAll(".grupodebotones button"))
 var tres_en_linea = [
     [0,1,2],
     [3,4,5],

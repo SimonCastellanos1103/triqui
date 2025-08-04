@@ -5,3 +5,12 @@ button{
 div{
     width: 160px;
 }
+.volveraempezar{
+    width: auto;
+    display: fleX;
+    flex-wrap: wrap;
+}
+
+.grupodebotones{
+    display: flex;
+    flex-wrap: wrap;}
