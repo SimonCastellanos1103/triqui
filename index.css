@@ -16,7 +16,7 @@ div{
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 0 auto 20px; /* Añadido margen inferior */
 }
 
 .grupodebotones button {
@@ -25,4 +25,19 @@ div{
     font-size: 48px;
     cursor: pointer;
     aspect-ratio: 1;   /* Esto asegura que sea cuadrado */
+}
+
+.volveraempezar {
+    display: block;
+    margin: 0 auto;    /* Centra horizontalmente */
+    padding: 10px 20px;
+    font-size: 16px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+#mensajeGanador {
+    text-align: center;
+    margin: 15px auto;
+    font-size: 20px;
 }
