@@ -11,6 +11,18 @@ div{
     flex-wrap: wrap;
 }
 
-.grupodebotones{
-    display: flex;
-    flex-wrap: wrap;}
+.grupodebotones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.grupodebotones button {
+    width: 150px;      /* Mismo valor que height para hacerlo cuadrado */
+    height: 150px;
+    font-size: 48px;
+    cursor: pointer;
+    aspect-ratio: 1;   /* Esto asegura que sea cuadrado */
+}

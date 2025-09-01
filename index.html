@@ -10,6 +10,8 @@
     <button></button>
 </div>
 
+<div id="mensajeGanador"></div> <!-- Mensaje del ganador -->
+
 <button class="volveraempezar" onclick="location.reload()">volver a empezar</button>
 <link href="index.css" rel="stylesheet" />
 
@@ -43,7 +45,8 @@ elementos.forEach(function (boton) {
         boton.textContent = turnoActual;
         
         if (revisar_triqui()) {
-            alert("Ganó " + turnoActual);
+            document.getElementById("mensajeGanador").textContent = "Ganó " + turnoActual;
+            elementos.forEach(function(b) { b.disabled = true; }); // Deshabilita todos los botones
         }
         
         turnoActual = cambiarTurno(turnoActual);
